@@ -6,14 +6,27 @@
         <title> welcome!</title>
 
         <script>
-            window.alert("yo")
+            window.alert("Welcome to ....");
+            var name,item,quantity;
+
+            now = newdate();
+            hour = now.gethours();
+            name = window.promt("Please enter your name.");
+            if (hour < 12){
+                document.write("Good morning");
+            }
+            if (hour < 18){
+                document.write("Good afternoon");
+            }
+            else {
+                document.write("Good evening");
+            }
+            document.writeln(name);
+
         </script>
-
-
     </head>
 
     <body>
-
-
+        
     </body>
 </html>
