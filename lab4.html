@@ -26,7 +26,13 @@
                 document.write("<h1> Good evening ");
             }
             document.writeln(name + " thank you for ordering!");
-            document.writeln("<p> You ordered " + quantity + item +"</p>")
+
+            if (quantity = 1){
+                document.writeln("<p> You ordered " + quantity + item +"</p>") 
+            }
+            else {
+                document.writeln("<p> You ordered " + quantity + item +"s</p>")
+            }
 
     
 
