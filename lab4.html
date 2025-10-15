@@ -9,10 +9,13 @@
             window.alert("Welcome to ....");
             var name,item,quantity;
 
+            item = window.prompt("Please enter the item you'd like to order.");
+            quantity = window.prompt("Please enter the quantity you'd like (1-99)");
+            name = window.prompt("Please enter your name.");
 
             now = new Date();  
             hour = now.getHours();
-            name = window.prompt("Please enter your name.");
+            
             if (hour < 12){
                 document.write("<h1> Good morning ");
             }
@@ -23,9 +26,8 @@
                 document.write("<h1> Good evening ");
             }
             document.writeln(name + "thank you for ordering!");
-            
-            item = window.prompt("Please enter the item you'd like to order.");
-            quantity = window.prompt("Please enter the quantity you'd like (1-99)");
+
+  
 
         </script>
     </head>
