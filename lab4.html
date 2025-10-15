@@ -27,15 +27,17 @@
             }
             document.writeln(name + " thank you for ordering!");
 
+            // i didn't know how to say you ordered bla bla bla amount without it coming across weirdly
             if (quantity == 1){
-                document.writeln("<p> You ordered " + quantity + item +"</p>") 
+                document.writeln("<p> You ordered " + quantity + " " + item +"</p>") 
             }
             else {
-                document.writeln("<p> You ordered " + quantity + item +"s</p>")
+                document.writeln("<p> You ordered " + quantity + " " + item +"s</p>")
             }
 
-    
-
+            arrival = new Date();
+            arrival.setDate(now.getDate()+7);
+            document.writeln("<p> Your order will arive on " + arrival.toDateString());
         </script>
     </head>
 </html>
