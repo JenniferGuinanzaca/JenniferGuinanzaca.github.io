@@ -81,29 +81,28 @@
         </div>
 
         <script>
+            function register(){
             const user = {
-                firstName: firstName,
-                lastName: lastName,
-                dob: dob,
-                email: email,
-                password: password,
+               firstName: document.getElementById('firstName').value,
+               lastName: document.getElementById('lastName').value,
+                dob: document.getElementById('dob').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
             };
 
             const hidden='*'.repeat(user.password.length);
 
 
-            if(!firstName || !lastName || !dob || !email || !password ){
+            if(!user.firstName || !user.lastName || !user.dob || !user.email || !user.password ){
                 alert('All fields must be present');
-                return;
+                return false;
             }
-            )
 
-            if (!password.includes('!') && !password.includes('?')){
+            if (!user.password.includes('!') && !user.password.includes('?')){
                 alert('Password must contain ! or ?');
-                return;
+                return false;
             }
-
-
+        }
         </script>
 
     </body>
