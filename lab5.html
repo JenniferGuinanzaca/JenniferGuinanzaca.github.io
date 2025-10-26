@@ -45,7 +45,7 @@
         </div>
 
         <div class="container my-4">
-            <h3 class="text-center my-3" style="color:#87426fc7">Register Now!</h3>
+            <h3 class="text-center my-3" style="color:#87426fc7">Register for updates!</h3>
             <form id="registrationForm" class="mx-auto" style="max-width: 600px;">
                 <div class="row">
                     <div class="col-md-6 mb-3">
@@ -107,17 +107,21 @@
 
             const hiddenPassword = '*'.repeat(user.password.length);
 
-            document.getElementById('result').innerHTML = `
-                <p> Registration Successful! </p>
-                <ul>
-                    <li> First Name: ${user.firstName}</li>
-                    <li> Last Name: ${user.lastName}</li>
-                    <li> Date of Birth: ${user.dob}</li>
-                    <li> Email: ${user.email}</li>
-                    <li> Password: ${hiddenPassword}</li>
-                </ul>
+            document.getElementById('result').innerHTML=`
+            <div class="text-center">
+                <div class="card d-inline-block" style="width: 18rem;">
+                    <div class="card-body text-center">
+                        <h5 style="color:#87426fc7;"> Registration Successful!</h5>
+                        <h6 style="color:#87426fc7;"> Thank you so much for registering! </h6>
+                        <p class="card-text">First Name: ${user.firstName}</p>
+                        <p class="card-text">Last Name: ${user.lastName}</p>
+                        <p class="card-text">DOB: ${user.dob}</p>
+                        <p class="card-text">Email: ${user.email}</p>
+                        <p class="card-text">Password: ${hiddenPassword}</p>
+                    </div>
+                </div>
+            </div>
             `;
-        });
         </script>
     </body>
 </html>
