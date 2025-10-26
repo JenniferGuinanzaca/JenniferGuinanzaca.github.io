@@ -84,15 +84,16 @@
 
         <script>
             const form = document.getElementById('registrationForm');
+            const resultDiv = document.getElementById('result');
             form.addEventListener('submit', function(event){
                 event.preventDefault();
         
          const user = {
-               firstName: document.getElementById('firstName').value,
-               lastName: document.getElementById('lastName').value,
-                dob: document.getElementById('dob').value,
-                email: document.getElementById('email').value,
-                password: document.getElementById('password').value
+               firstName: document.getElementById('firstName').value.trim(),
+               lastName: document.getElementById('lastName').value.trim(),
+                dob: document.getElementById('dob').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                password: document.getElementById('password').value.trim()
             };
 
             if(!user.firstName || !user.lastName || !user.dob || !user.email || !user.password){
