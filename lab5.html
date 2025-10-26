@@ -81,8 +81,11 @@
         </div>
 
         <script>
-            function register(){
-            const user = {
+            const form = document.getElementById('registrationForm');
+            form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+        
+         const user = {
                firstName: document.getElementById('firstName').value,
                lastName: document.getElementById('lastName').value,
                 dob: document.getElementById('dob').value,
@@ -90,20 +93,29 @@
                 password: document.getElementById('password').value
             };
 
-            const hidden='*'.repeat(user.password.length);
-
-
-            if(!user.firstName || !user.lastName || !user.dob || !user.email || !user.password ){
+            const hiddenPassword = '*'.repeat(user.password.length);
+            
+            if(!user.firstName || !user.lastName || !user.dob || !user.email || !user.password){
                 alert('All fields must be present');
-                return false;
+                return;
             }
 
-            if (!user.password.includes('!') && !user.password.includes('?')){
+            if(!user.password.includes('!') && !user.password.includes('?')){
                 alert('Password must contain ! or ?');
-                return false;
+                return;
             }
-        }
-        </script>
 
+            document.getElementById('result').innerHTML = `
+                <p> Registration Successful! </p>
+                <ul>
+                    <li> First Name: ${user.firstName}</li>
+                    <li> Last Name: ${user.lastName}</li>
+                    <li> Date of Birth: ${user.dob}</li>
+                    <li> Email: ${user.email}</li>
+                    <li> Password: ${hiddenPassword}</li>
+                </ul>
+            `;
+        });
+        </script>
     </body>
 </html>
