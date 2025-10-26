@@ -70,7 +70,7 @@
 
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="text" id="password" class="form-control" placeholder="Create a password">
+                        <input type="password" id="password" class="form-control" placeholder="Create a password">
                     </div>
 
                     <div class="mb-3">
@@ -106,7 +106,7 @@
             }
 
             const hiddenPassword = '*'.repeat(user.password.length);
-            
+
             document.getElementById('result').innerHTML = `
                 <p> Registration Successful! </p>
                 <ul>
