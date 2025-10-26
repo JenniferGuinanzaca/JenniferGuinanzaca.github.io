@@ -96,12 +96,20 @@
             };
 
             if(!user.firstName || !user.lastName || !user.dob || !user.email || !user.password){
-                alert('All fields must be present');
+                resultDiv.innerHTML= `
+                    <div class="alert alert-danger text-center" role="alert">
+                        Registration failed: All fields are required!!
+                    </div>
+                `;
                 return;
             }
 
             if(!user.password.includes('!') && !user.password.includes('?')){
-                alert('Password must contain ! or ?');
+                resultDiv.innerHTML=`
+                    <div class="alert alert-danger text-center" role="alert">
+                        Registration failed: Password must contain "!" or "?" !!
+                    </div>
+                `;
                 return;
             }
 
