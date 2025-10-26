@@ -14,7 +14,7 @@
 
     <body>
 
-        <ul class="nav justify-content-center" style="background-color: #D5E2E8">
+        <ul class="nav justify-content-center" style="background-color: #fce4ec">
             <li class="nav-item">
                  <a class="nav-link active" aria-current="page" href="https://jenniferguinanzaca.github.io/lab5.html">Home</a>
             </li>
@@ -26,58 +26,59 @@
             </li>
         </ul>
 
-        <div class="mt-0 p-4 rounded text-center" style="background-color: #eff4f6; color:#33333372;">
+        <div class="mt-0 p-4 rounded text-center" style="background-color: #fce4ec7e; color:#87426fc7;">
             <h1>  Keyko </h1>
             <h7> Carry a little joy</h7>
         </div>
 
         <div class="mt-0 p-4 container text-center">
-            <h3>  About the product </h3>
-            <p> Meet Usagi, your companion from Chiikawa! This soft and lightweight keychain is the perfect way to bring a bit of joy wherever you go!
+            <h2 style="color:#87426fc7;">  About our product </h2>
+            <p style="color:#5f1b47a0"> Meet Usagi, your companion from Chiikawa! This soft and lightweight keychain is the perfect way to bring a bit of joy wherever you go!
                 Hang it on your bag, keys , or backpack.
             </p>
 
-            <p>  Let Usagi brighten your day a little more! </p>
+            <p style="color:#87426fc7">  Let Usagi brighten your day a little more! </p>
         </div>
 
-       <div class="container my-4">
-            <div class="row align-items center justify-content-center">
-                    <div class="col-md-5 text-center">
-                            <img src="https://www.hellodiscountstore.com/cdn/shop/files/medium_d8534c0c-29c1-4fa3-89bd-16bf4ce948dd.jpg?v=1751515616&width=1214" alt="usagi" style="max-width:500px;">
+        <div class="container text-center"> 
+            <img src="https://www.hellodiscountstore.com/cdn/shop/files/medium_d8534c0c-29c1-4fa3-89bd-16bf4ce948dd.jpg?v=1751515616&width=1214" alt="usagi" style="max-width:500px;">
+        </div>
+
+        <div class="container my-4">
+            <h3 class="text-center my-3" style="color:#87426fc7">Register Now!</h3>
+            <form id="registrationForm" class="mx-auto" style="max-width: 600px;">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" id="firstName" class="form-control" placeholder="Enter your first name">
                     </div>
 
-                    <div class="col-md-5">
-                        <h3> Register Now!</h3>
-                        <form id="registrationForm">
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for ="firstName=" class="form-label">First Name</label>
-                                    <input type="text" id="firstName" class="form-control" placeholder="Enter your first name">
-                                </div>
-
-                                <div class="col-md-6 mb-3">
-                                    <label for ="lastName" class="form-label">Last Name</label>
-                                    <input type="text" id="lastName" class="form-control" placeholder="Enter your last name">
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for ="dob" class="form-label">Date of Birth</label>
-                                    <input type="text" id="dob" class="form-control" placeholder="mm/dd/yyyy">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for ="email" class="form-label">Email</label>
-                                    <input type="text" id="email" class="form-control" placeholder="Enter your email">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for ="password" class="form-label">Password</label>
-                                    <input type="text" id="password" class="form-control" placeholder="Create a password">
-                                </div>
-                            </div>
-                        </form>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" id="lastName" class="form-control" placeholder="Enter your last name">
                     </div>
-            </div>
-       </div>
+
+                    <div class="mb-3">
+                        <label for="dob" class="form-label">Date of Birth</label>
+                        <input type="text" id="dob" class="form-control" placeholder="mm/dd/yyyy">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" id="email" class="form-control" placeholder="Enter your email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="text" id="password" class="form-control" placeholder="Create a password">
+                    </div>
+
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-secondary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
     </body>
 </html>
