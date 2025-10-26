@@ -78,12 +78,14 @@
                     </div>
                 </div>
             </form>
+
+            <div id="result" class="text-center my-3"></div>
         </div>
 
         <script>
             const form = document.getElementById('registrationForm');
-            form.addEventListener('submit', function(event) {
-            event.preventDefault(); 
+            form.addEventListener('submit', function(event){
+                event.preventDefault();
         
          const user = {
                firstName: document.getElementById('firstName').value,
@@ -93,8 +95,6 @@
                 password: document.getElementById('password').value
             };
 
-            const hiddenPassword = '*'.repeat(user.password.length);
-            
             if(!user.firstName || !user.lastName || !user.dob || !user.email || !user.password){
                 alert('All fields must be present');
                 return;
@@ -105,6 +105,8 @@
                 return;
             }
 
+            const hiddenPassword = '*'.repeat(user.password.length);
+            
             document.getElementById('result').innerHTML = `
                 <p> Registration Successful! </p>
                 <ul>
