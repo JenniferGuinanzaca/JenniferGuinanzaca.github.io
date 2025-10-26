@@ -81,8 +81,27 @@
         </div>
 
         <script>
+            const user = {
+                firstName: firstName,
+                lastName: lastName,
+                dob: dob,
+                email: email,
+                password: password,
+            };
+
+            const hidden='*'.repeat(user.password.length);
 
 
+            if(!firstName || !lastName || !dob || !email || !password ){
+                alert('All fields must be present');
+                return;
+            }
+            )
+
+            if (!password.includes('!') && !password.includes('?')){
+                alert('Password must contain ! or ?');
+                return;
+            }
 
 
         </script>
