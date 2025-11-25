@@ -9,8 +9,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Cookie&family=Quicksand:wght@400;500&family=Poppins:wght@400;500&family=M+PLUS+Rounded+1c:wght@400;500&family=Roboto:wght@400;500&family=Lato:wght@400;500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
-        
-
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -61,7 +59,77 @@
                 </div>
             </div>
         </nav>
-        <hr style="border: none; height: 1px; background-color: #d5d2d1; margin: 0 0 20px 0;">
+        <hr style="border: none; height: 1px; background-color: #d5d2d1; margin: 0 0 20px 0;"> 
+
+        <!-- Category Cards Section -->
+        <section class="container py-5">
+            <h2 class="text-center mb-4" style="font-family:'Quicksand'; color:#688c96;">
+                Explore by Category
+            </h2>
+
+            <div class="row justify-content-center g-4">
+
+                <!-- Latin -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="recipes.html?category=latin" class="text-decoration-none">
+                        <div class="card shadow-sm border-0 h-100">
+                            <img src="https://www.foodandwine.com/thmb/SPdstaqV80YcCbzzqtHXjxx4Isg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/birria-tacos-FT-RECIPE0420-1-b209e88cc1c04b72849634ff15214290.jpg" class="card-img-top" alt="Latin Food">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" style="color:#688c96;">Latin</h5>
+                                <p class="card-text text-muted" style="font-size:14px;">
+                                    Spicy, savory, and vibrant dishes from Latin America.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Asian -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="recipes.html?category=asian" class="text-decoration-none">
+                        <div class="card shadow-sm border-0 h-100">
+                            <img src="https://delivisor.com/wp-content/uploads/2024/12/asian-food-served-plates-pans-and-bowls-full-of-2023-11-27-04-50-29-utc-scaled.jpg" class="card-img-top" alt="Asian Food">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" style="color:#688c96;">Asian</h5>
+                                <p class="card-text text-muted" style="font-size:14px;">
+                                    Fresh and flavorful recipes from Asia.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Dessert -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="recipes.html?category=dessert" class="text-decoration-none">
+                        <div class="card shadow-sm border-0 h-100">
+                            <img src="https://www.foodandwine.com/thmb/ckc6L6xKox0WfpfO6dMkuVGPQOY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Angel-Food-Cake-with-Three-Berry-Compote-FT-RECIPE0323-541a780b871441e0ab14383ee38acc44.jpg" class="card-img-top" alt="Desserts">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" style="color:#688c96;">Desserts</h5>
+                                <p class="card-text text-muted" style="font-size:14px;">
+                                    Delicious sweets to brighten any special moment.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- All Recipes -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="recipes.html?all=true" class="text-decoration-none">
+                        <div class="card shadow-sm border-0 h-100">
+                            <img src="https://www.simplyrecipes.com/thmb/J2sGAbTViSZc5ub9AkdRbh3K4yk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Skillet-Cacio-e-Pepe-Tortellini-LEAD-4-486768b5cbd645829e72ce7f65f56a95.jpg" class="card-img-top" alt="All Recipes">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" style="color:#688c96;">All Recipes</h5>
+                                <p class="card-text text-muted" style="font-size:14px;">
+                                   A full collection of dishes to explore and enjoy.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <!--About Us-->
         <section id="About" class="container py-5 text-center">
