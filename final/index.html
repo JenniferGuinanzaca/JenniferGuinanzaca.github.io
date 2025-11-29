@@ -49,12 +49,13 @@
                                 <a class="nav-link active" aria-current="page" href="Home" style="color:#688c96;">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="About" style="color:#688c96;">About Us</a>
+                                <a class="nav-link" href="#" style="color:#688c96; onclick="scrollToAbout()">About Us</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="https://jenniferguinanzaca.github.io/final/recipes.html" style="color:#688c96;" >Recipes</a>
                             </li>
                         </ul>
+
                         <form class="d-flex ms-3" role="search">
                             <input id="searchInput" class="form-control rounded-pill border border-secondary me-2 px-3" 
                             type="search" placeholder="Search recipes..." aria-label="Search" style="width: 200px; transition: all 0.3s;">
@@ -148,6 +149,14 @@
                 <!--cards will go here-->
             </div>
         </section>
+
+        <!--About Us-->
+        <section id="About" class="container py-5 text-center">
+            <h2 class="mb-4" style="font-family:'Quicksand'; color:#688c96;">About Us</h2>
+            <p style="font-family:'Lato'; color:#555;">
+                Spoonful is a cozy place where recipes meet creativity. Whether you're a beginner or a master chef, we have something for everyone!
+            </p>
+        </section>      
     </body>
 
     <script>
@@ -199,6 +208,10 @@
              </a>
          </div>`;
        });
+    }
+
+    function scrollToAbout() {
+    document.getElementById("About").scrollIntoView({ behavior: 'smooth' });
     }
 
     loadFeatured();
