@@ -49,10 +49,10 @@
                                 <a class="nav-link active" aria-current="page" href="Home" style="color:#688c96;">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" style="color:#688c96; onclick="scrollToAbout()">About Us</a>
+                                <a class="nav-link" href="#" style="color:#688c96;" onclick="scrollToAbout()">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://jenniferguinanzaca.github.io/final/recipes.html" style="color:#688c96;" >Recipes</a>
+                                <a class="nav-link" href="https://jenniferguinanzaca.github.io/final/recipes.html" style="color:#688c96;">Recipes</a>
                             </li>
                         </ul>
 
@@ -151,12 +151,14 @@
         </section>
 
         <!--About Us-->
-        <section id="About" class="container py-5 text-center">
-            <h2 class="mb-4" style="font-family:'Quicksand'; color:#688c96;">About Us</h2>
-            <p style="font-family:'Lato'; color:#555;">
-                Spoonful is a cozy place where recipes meet creativity. Whether you're a beginner or a master chef, we have something for everyone!
-            </p>
-        </section>      
+        <div class="mt-0 p-4 rounded text-center" style="background-color: #eff4f6; color:#dbeef4;">
+            <section id="About" class="container py-5 text-center">
+                <h2 class="mb-4" style="font-family:'Quicksand'; color:#688c96;">About Us</h2>
+                <p style="font-family:'Lato'; color:#555;">
+                    Spoonful is a cozy place where recipes meet creativity. Whether you're a beginner or a master chef, we have something for everyone!
+                </p>
+            </section>      
+        </div>
     </body>
 
     <script>
@@ -209,7 +211,8 @@
          </div>`;
        });
     }
-
+ 
+    //super fancy auto scroll!
     function scrollToAbout() {
     document.getElementById("About").scrollIntoView({ behavior: 'smooth' });
     }
