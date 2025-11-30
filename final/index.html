@@ -177,9 +177,12 @@
                 const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=4&addRecipeInformation=true`;
                 const response = await fetch(url);
                 const data = await response.json();
+                const filtered = data.results.filter(
+                    r => r.instructions && r.instructions.trim() !== ""
+                );
 
-                localStorage.setItem("featuredRecipes", JSON.stringify(data.results));
-                displayRecipes(data.results);
+                localStorage.setItem("featuredRecipes", JSON.stringify(filtered)); //to filter out recipes with no instructions
+                displayRecipes(filtered);
             } 
             catch (error){
                 container.innerHTML = "<p>Could not load recipes. Try again later.</p>";
