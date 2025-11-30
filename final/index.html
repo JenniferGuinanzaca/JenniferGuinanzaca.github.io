@@ -163,7 +163,74 @@
     </body>
 
     <script>
-        
+        const apiKey = "fa5eca3f2d24416287a3dc418835e215";
+        const container = document.getElementById("recipesContainer");
 
-     </script>
+        async function loadFeatured() {
+            const cached = localStorage.getItem("featuredRecipes")
+            console.log("cached recipes:", cached);
+
+            if (cached){
+                try{
+                    const recipes = JSON.parse(cached);
+                    displayRecipes(recipes);
+                    return;
+                } catch (error){
+                    console.error("Error parsing cached recipes:", error);
+                }
+            }
+
+            try {
+            const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=4&addRecipeInformation=true`;
+            const response = await fetch(url);
+            const data = await response.json();
+            console.log("API response:", data);
+
+            if (!data.results || data.results.length === 0) {
+                container.innerHTML = "<p>No recipes found. Please try again later.</p>";
+                return;
+            }
+
+            displayRecipes(data.results);
+            
+        }
+
+        catch (error) {
+                container.innerHTML = "<p>Could not load recipes. Try again later.</p>";
+                console.error("Error fetching recipes:", error);
+            }
+        }
+
+        function scrollToAbout() {
+        document.getElementById("About").scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function searchRecipe(){
+            const query = document.getElementById("searchInput").value.trim();
+            if (query){
+                window.location.href = `recipes.html?query=${encodeURIComponent(query)}`;
+            }
+        }
+
+       function displayRecipes(recipes) {
+                        container.innerHTML = "";
+                        recipes.forEach(recipe => {
+                        container.innerHTML += `
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <a href="recipe.html?id=${recipe.id}" class="text-decoration-none">
+                            <div class="card shadow-sm border-0 h-100">
+                                <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
+                                <div class="card-body text-center">
+                                        <h5 style="color:#688c96;">${recipe.title}</h5>
+                                        <p style="font-size:14px; color:#555;">Total time: ${recipe.readyInMinutes} mins</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>`;
+                });
+            }
+
+        scrollToAbout();
+        loadFeatured();
+    </script>
 </html>
