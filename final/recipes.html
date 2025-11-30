@@ -65,26 +65,9 @@
     <script>
         const apiKey = "fa5eca3f2d24416287a3dc418835e215";
         const container = document.getElementById("recipesContainer");
-        const pageTitle = document.getElementById("pageTitle");
-
-        //function setPageTitle(){
-            //const params = new URLSearchParams(window.location.search);
-            //const category = params.get("category");
-            //const query = params.get("query");
-           // const showAll = params.get("all");
-           // const pageTitle = document.getElementById("pageTitle");
-            
-          //  if (category){
-            //    pageTitle.text = category;
-          //  } else if (query){
-          //      pageTitle.text = "Recipes";
-          ///  } else if (showAll) {
-          //    pageTitle.text = "All recipes";
-           /// }
-       // }
 
         async function loadRecipes(){
-            const cached = localStorage.getItem("loadRecipes");
+            const cached = localStorage.getItem("searchedRecipes");
             if (cached){
                 displayRecipes(JSON.parse(cached));
                 return;
@@ -106,6 +89,7 @@
                 } else {
                     url += `&number=5`;
                 }
+
                 const response = await fetch(url);
                 const data = await response.json()
                 const filtered = data.results.filter(
@@ -138,8 +122,6 @@
                 </div>`;
             });
         }
-
-       // setPageTitle();
         loadRecipes();
     </script>
 </html>
