@@ -52,5 +52,65 @@
             </nav>
 
             <hr style="border: none; height: 1px; background-color: #d5d2d1; margin: 0 0 20px 0;"> 
+
+            <div class="container py-5" id="recipeContainer">
+                <!-- Recipe content will appear here -->
+            </div>
     </body>
+    <script>
+        const apiKey = "fa5eca3f2d24416287a3dc418835e215";
+        const container = document.getElementById("recipeContainer");
+
+        const params = new URLSearchParams(window.location.search);
+        const recipeId = params.get("id");
+
+        async function loadRecipe(){
+            if(!recipeId) {
+                container.innerHTML = "<p> No recipe selected. </p>";
+                return;
+            }
+
+            const cached = localStorage.getItem(`recipe-${recipeId}`);
+            if (cached){
+                displayRecipe(JSON.parse(cached));
+                return;
+            }
+
+            try { 
+                const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=4&addRecipeInformation=true`;
+                const response = await fetch(url);
+                const data = await response.json();
+
+                localStorage.setItem("featuredRecipes", JSON.stringify(data.results));
+                displayRecipes(data.results);
+            } 
+            catch (error){
+                container.innerHTML = "<p>Could not load recipe. Try again later.</p>";
+                console.error(error);
+            }
+        }
+
+
+        function displayRecipe(recipe){
+            container.innerHTML = `
+            <h1 style = "color#688c96;">${recipe.title}</h1>
+            <img src="${recipe.image}" class="img-fluid mb-3" alt="${recipe.title}">
+            <p><strong>Servings:</strong> ${recipe.servings} | <strong>Total Time:</strong> ${recipe.readyInMinutes} mins</p>
+            
+            <h3>Ingredients</h3>
+            <ul>
+                ${recipe.extendedIngredients.map(ing => `<li>${ing.original}</li>`).join('')}
+            </ul>
+
+            <h3> Instructions </h3>
+            <p>${recipe.instructions || "No Instructions provided."} </p?
+            <h3> Nutrition </h3>
+            <ul>
+                `<li>${n.name}: ${n.amount} ${n.unit}</li>`).join('') || "<li>No nutrition info.</li>"}
+            </ul>
+            `;
+        }
+
+        loadRecipe();
+    </script>
 </html>
