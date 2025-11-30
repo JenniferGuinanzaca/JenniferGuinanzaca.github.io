@@ -97,21 +97,7 @@
             <img src="${recipe.image}" class="img-fluid mb-3" alt="${recipe.title}">
             <p><strong>Servings:</strong> ${recipe.servings} | <strong>Total Time:</strong> ${recipe.readyInMinutes} mins</p>
             
-            <h3>Ingredients</h3>
-            <ul>
-                ${recipe.extendedIngredients.map(ing => `<li>${ing.original}</li>`).join('')}
-            </ul>
-
-            <h3> Instructions </h3>
-            <p>${recipe.instructions || "No Instructions provided."} </p>
-            <h3> Nutrition </h3>
-            <ul>
-                 ${recipe.nutrition?.nutrients? recipe.nutrition.nutrients.map
-                 ( n=> `<li>${n.name}: ${n.amount}${n.unit} </li>`).join('') :
-                  "<li> No nutritition info.</li>" }
-            </ul>
-        `;
-        }
+            
 
         loadRecipe();
     </script>
