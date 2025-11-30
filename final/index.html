@@ -181,7 +181,7 @@
                     r => r.instructions && r.instructions.trim() !== ""
                 );
 
-                localStorage.setItem("featuredRecipes", JSON.stringify(filtered)); //to filter out recipes with no instructions
+                localStorage.setItem("featuredRecipes", JSON.stringify(filtered)); //to filter out recipes with no
                 displayRecipes(filtered);
             } 
             catch (error){
@@ -197,29 +197,29 @@
             }
         }
 
-        function displayRecipes(recipes) {
-            container.innerHTML = "";
-            recipes.forEach(recipe => {
-            container.innerHTML += `
-            <div class="col-12 col-sm-6 col-md-3">
-                <a href="recipe.html?id=${recipe.id}" class="text-decoration-none">
-                 <div class="card shadow-sm border-0 h-100">
-                     <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
-                     <div class="card-body text-center">
-                            <h5 style="color:#688c96;">${recipe.title}</h5>
-                            <p style="font-size:14px; color:#555;">Total time: ${recipe.readyInMinutes} mins</p>
-                     </div>
-                 </div>
-             </a>
-         </div>`;
-       });
-    }
+            function displayRecipes(recipes) {
+                container.innerHTML = "";
+                recipes.forEach(recipe => {
+                container.innerHTML += `
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="recipe.html?id=${recipe.id}" class="text-decoration-none">
+                    <div class="card shadow-sm border-0 h-100">
+                        <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
+                        <div class="card-body text-center">
+                                <h5 style="color:#688c96;">${recipe.title}</h5>
+                                <p style="font-size:14px; color:#555;">Total time: ${recipe.readyInMinutes} mins</p>
+                        </div>
+                    </div>
+                </a>
+            </div>`;
+        });
+        }
  
-    //super fancy auto scroll!
-    function scrollToAbout() {
-    document.getElementById("About").scrollIntoView({ behavior: 'smooth' });
-    }
+        //super fancy auto scroll!
+        function scrollToAbout() {
+        document.getElementById("About").scrollIntoView({ behavior: 'smooth' });
+        }
 
-    loadFeatured();
+        loadFeatured();
     </script>
 </html>
