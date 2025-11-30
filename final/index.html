@@ -163,66 +163,7 @@
     </body>
 
     <script>
-        const apiKey = "fa5eca3f2d24416287a3dc418835e215";
-        const container = document.getElementById("recipesContainer");
+        
 
-        async function loadFeatured(){
-            //I decided to Cache because this api is stupid, sorry. (I needed a solution without getting a new api :) )
-            const cached = localStorage.getItem("featuredRecipes");
-            console.log("cached recipes:", cached);  //debugging purposes
-            if (cached){
-                displayRecipes(JSON.parse(cached));
-                return;
-            }
-
-            try { 
-                const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=4&addRecipeInformation=true`;
-                const response = await fetch(url);
-                const data = await response.json();
-                console.log(data); //debugging purposes
-                //const filtered = data.results.filter(
-                    //r => r.instructions && r.instructions.trim() !== ""
-                //);
-
-                localStorage.setItem("featuredRecipes", JSON.stringify(filtered)); //to filter out recipes with no
-                displayRecipes(filtered);
-            } 
-            catch (error){
-                container.innerHTML = "<p>Could not load recipes. Try again later.</p>";
-                console.error(error);
-            }
-        }
-
-        function searchRecipe(){
-            const query= document.getElementById("searchInput").value.trim();
-            if (query){
-                window.location.href = `recipes.html?query=${query}`;
-            }
-        }
-
-            function displayRecipes(recipes) {
-                        container.innerHTML = "";
-                        recipes.forEach(recipe => {
-                        container.innerHTML += `
-                        <div class="col-12 col-sm-6 col-md-3">
-                            <a href="recipe.html?id=${recipe.id}" class="text-decoration-none">
-                            <div class="card shadow-sm border-0 h-100">
-                                <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
-                                <div class="card-body text-center">
-                                        <h5 style="color:#688c96;">${recipe.title}</h5>
-                                        <p style="font-size:14px; color:#555;">Total time: ${recipe.readyInMinutes} mins</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>`;
-                });
-            }
- 
-        //super fancy auto scroll!
-        function scrollToAbout() {
-        document.getElementById("About").scrollIntoView({ behavior: 'smooth' });
-        }
-
-        loadFeatured();
-    </script>
+     </script>
 </html>
