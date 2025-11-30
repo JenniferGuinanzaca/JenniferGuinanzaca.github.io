@@ -64,12 +64,82 @@
 
     <script>
         const apiKey = "fa5eca3f2d24416287a3dc418835e215";
-        const params = new URLSearchParams(window.location.search);
-        const category = params.get("category");
-        const query = params.get("query");
-        const showAll = params.get("all");
+        const container = document.getElementById("recipesContainer");
+        const pageTitle = document.getElementById("pageTitle");
 
-    //Decide what to fetch based on URL
-        let fetchURL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=20&addRecipeInformation=true`;
+        function setPageTitle(){
+            const params = new URLSearchParams(window.location.search);
+            const category = params.get("category");
+            const query = params.get("query");
+            const showAll = params.get("all");
+            const pageTitle = document.getElementById("pageTitle");
+            
+            if (category){
+                pageTitle.text = category;
+            } else if (query){
+                pageTitle.text = "Recipes";
+            } else if (showAll) {
+                pageTitle.text = "All recipes";
+            }
+        }
+
+        async function loadRecipes(){
+            const cached = localStorage.getItem("loadRecipes");
+            if (cached){
+                displayRecipes(JSON.parse(cached));
+                return;
+            }
+
+            try{
+                const params = new URLSearchParams(window.location.search);
+                const category = params.get("category");
+                const query = params.get("query");
+                const showAll = params.get("all");
+
+                let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&&addRecipeInformation=true`;
+                if (category){
+                    url += `&category=${category}`;
+                } else if (query) {
+                    url += `&query=${query}`;
+                } else if (showAll){
+                    url += `&number= 10`;
+                } else {
+                    url += `&number=5`;
+                }
+                const response = await fetch(url);
+                const data = await response.json()
+                const filtered = data.results.filter(
+                    r => r.instructions && r.instructions.trim() !== ""
+                );
+
+                localStorage.setItem("featuredRecipes", JSON.stringify(filtered)); //to filter out recipes with no instrctuions 
+                displayRecipes(filtered);
+            } 
+            catch (error){
+                container.innerHTML = "<p>Could not load recipes. Try again later.</p>";
+                console.error(error);
+            }
+        }
+                
+        function displayRecipes(recipes){
+            container.innerHTML = "";
+            recipes.forEach( recipe => {
+                container.innerHTML += `
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="recipe.html?id=${recipe.id}" class="text-decoration-none">
+                        <div class="card shadow-sm border-0 h-100">
+                            <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
+                            <div class="card-body text-center">
+                                <h5 style="color:#688c96;">${recipe.title}</h5>
+                                <p style="font-size:14px; color:#555;"> Total Time:${recipe.readyInMinutes} mins </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>`;
+            });
+        }
+
+        setPageTitle();
+        loadRecipes();
     </script>
 </html>
