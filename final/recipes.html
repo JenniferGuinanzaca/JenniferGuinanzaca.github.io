@@ -55,7 +55,7 @@
             <!--Recipess-->
             <section class="container py-5">
                  <h2 id="pageTitle" class="text-center mb-4" style="font-family:'Quicksand'; color:#688c96;">Recipes</h2>
-                  <div id="recipesContainer" class="row justify-content-center g-4">
+                  <div id="recipes_Container" class="row justify-content-center g-4">
                     <!-- cards will go here--> 
                  </div>
             </section>
@@ -63,6 +63,70 @@
     </body>
 
     <script>
-        
+        const apiKey = "fa5eca3f2d24416287a3dc418835e215";
+        const container = document.getElementById("recipes_Container");
+
+        //FUNCTION LOADS RECIPE BASED ON category , query , or all!!!
+        async function loadRecipes(){
+
+            const cached = localStorage.getItem("featuredRecipes")
+            console.log("cached recipes:", cached);
+
+            if (cached){
+                try{
+                    const recipes = JSON.parse(cached);
+                    displayRecipes(recipes);
+                    return;
+                } catch (error){
+                    console.error("Error parsing cached recipes:", error);
+                    localStorage.removeItem("featuredRecipes");
+                }
+            }
+
+            try{
+                const params = new URLSearchParams(window.location.search);
+                const category = params.get("category");
+                const query = params.get("query");
+                const showAll = params.get("all");
+
+                let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&addRecipeInformation=true`;
+                if (category){
+                    url += `&cuisine=${category}`;
+                } else if (query){
+                    url += `&query=${query}`;
+                } else if (showAll){
+                    url += `&number=10`;
+                } else {
+                    url += `&number=5`;
+                }
+                
+                const response = await fetch(url);
+                const data = await response.json();
+                const recipes = data.results;
+                displayRecipes(recipes);
+            } catch (error) {
+                container.innerHTML = "<p> Could not load recipes. Try again later. </p>";
+                console.error("Error loading recipes:",error);
+            }
+        }
+
+        function displayRecipes(recipes) {
+                        container.innerHTML = "";
+                        recipes.forEach(recipe => {
+                        container.innerHTML += `
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <a href="recipe.html?id=${recipe.id}" class="text-decoration-none">
+                            <div class="card shadow-sm border-0 h-100">
+                                <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
+                                <div class="card-body text-center">
+                                        <h5 style="color:#688c96;">${recipe.title}</h5>
+                                        <p style="font-size:14px; color:#555;">Total time: ${recipe.readyInMinutes} mins</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>`;
+                });
+            }
+        loadRecipes();
     </script>
 </html>
