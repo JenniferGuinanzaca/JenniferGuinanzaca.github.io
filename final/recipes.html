@@ -54,7 +54,7 @@
 
             <!--Recipess-->
             <section class="container py-5">
-                 <h2 id="pageTitle" class="text-center mb-4" style="font-family:'Quicksand'; color:#688c96;">All Recipes</h2>
+                 <h2 id="pageTitle" class="text-center mb-4" style="font-family:'Quicksand'; color:#688c96;">Recipes</h2>
                   <div id="recipesContainer" class="row justify-content-center g-4">
                     <!-- cards will go here--> 
                  </div>
@@ -67,21 +67,21 @@
         const container = document.getElementById("recipesContainer");
         const pageTitle = document.getElementById("pageTitle");
 
-        function setPageTitle(){
-            const params = new URLSearchParams(window.location.search);
-            const category = params.get("category");
-            const query = params.get("query");
-            const showAll = params.get("all");
-            const pageTitle = document.getElementById("pageTitle");
+        //function setPageTitle(){
+            //const params = new URLSearchParams(window.location.search);
+            //const category = params.get("category");
+            //const query = params.get("query");
+           // const showAll = params.get("all");
+           // const pageTitle = document.getElementById("pageTitle");
             
-            if (category){
-                pageTitle.text = category;
-            } else if (query){
-                pageTitle.text = "Recipes";
-            } else if (showAll) {
-                pageTitle.text = "All recipes";
-            }
-        }
+          //  if (category){
+            //    pageTitle.text = category;
+          //  } else if (query){
+          //      pageTitle.text = "Recipes";
+          ///  } else if (showAll) {
+          //    pageTitle.text = "All recipes";
+           /// }
+       // }
 
         async function loadRecipes(){
             const cached = localStorage.getItem("loadRecipes");
@@ -139,7 +139,7 @@
             });
         }
 
-        setPageTitle();
+       // setPageTitle();
         loadRecipes();
     </script>
 </html>
