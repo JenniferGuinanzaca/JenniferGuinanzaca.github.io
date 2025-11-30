@@ -168,19 +168,19 @@
 
         async function loadFeatured() {
             //I CACHED IT BECAUSE THIS "FREE" API SNUCK UP ON ME OKAY I'M SORRY I HAD TO WORK AROUND IT WITHOUT HAVING TO FIND A NEW API LAST MINUTE.
-            const cached = localStorage.getItem("featuredRecipes")
-            console.log("cached recipes:", cached);
+           // const cached = localStorage.getItem("featuredRecipes")
+           // console.log("cached recipes:", cached);
 
-            if (cached){
-                try{
-                    const recipes = JSON.parse(cached);
-                    displayRecipes(recipes);
-                    return;
-                } catch (error){
-                    console.error("Error parsing cached recipes:", error);
-                    localStorage.removeItem("featuredRecipes");
-                }
-            }
+           // if (cached){
+            //    try{
+            //        const recipes = JSON.parse(cached);
+            //        displayRecipes(recipes);
+            //        return;
+            //    } catch (error){
+            //        console.error("Error parsing cached recipes:", error);
+            //        localStorage.removeItem("featuredRecipes");
+            //    }
+            //}
 
             try {
             const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=4&addRecipeInformation=true`;
