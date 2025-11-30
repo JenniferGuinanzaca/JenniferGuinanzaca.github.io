@@ -77,12 +77,12 @@
             }
 
             try { 
-                const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=4&addRecipeInformation=true`;
+                const url = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}&number=4&addRecipeInformation=true`;
                 const response = await fetch(url);
                 const data = await response.json();
 
                 localStorage.setItem("featuredRecipes", JSON.stringify(data.results));
-                displayRecipes(data.results);
+                displayRecipe(data.results);
             } 
             catch (error){
                 container.innerHTML = "<p>Could not load recipe. Try again later.</p>";
@@ -103,12 +103,14 @@
             </ul>
 
             <h3> Instructions </h3>
-            <p>${recipe.instructions || "No Instructions provided."} </p?
+            <p>${recipe.instructions || "No Instructions provided."} </p>
             <h3> Nutrition </h3>
             <ul>
-                `<li>${n.name}: ${n.amount} ${n.unit}</li>`).join('') || "<li>No nutrition info.</li>"}
+                 ${recipe.nutrition?.nutrients? recipe.nutrition.nutrients.map
+                 ( n=> `<li>${n.name}: ${n.amount}${n.unit} </li>`).join('') :
+                  "<li> No nutritition info.</li>" }
             </ul>
-            `;
+        `;
         }
 
         loadRecipe();
