@@ -92,12 +92,14 @@
                 let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&addRecipeInformation=true`;
                 if (category){
                     url += `&cuisine=${category}`;
+                    url +=`&number=5`;
                 } else if (query){
                     url += `&query=${query}`;
+                    url+=`&number=5`;
                 } else if (showAll){
                     url += `&number=10`;
-                } else {
-                    url += `&number=5`;
+                //} else {
+                //    url += `&number=5`;
                 }
                 
                 const response = await fetch(url);
