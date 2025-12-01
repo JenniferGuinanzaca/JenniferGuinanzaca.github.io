@@ -96,17 +96,18 @@
             }
 
             container.innerHTML = `
-            <h1 class="mb-4"> ${data.title}</h1>
+            <h1 class="mb-4" style="font-family:'Quicksand'; color:#688c96;"> ${data.title}</h1>
             <img src="${data.image}" class="img-fluid mb-4 rounded">
-            <h3>Ingredients</h3>
-            <ul>${ingredientsHTML}</ul>
 
-            <h3 class="mt-4">Instructions</h3>
-            <ol>${instructionsHTML}</ol>
+            <h3 class="mt-4" style="color:#688c96;">Info</h3>
+            <p style="color:#555;"><strong>Ready in:</strong> ${data.readyInMinutes} minutes</p>
+            <p style="color:#555;"><strong>Servings:</strong> ${data.servings}</p>
 
-            <h3 class="mt-4">Additional Info</h3>
-            <p><strong>Ready in:</strong> ${data.readyInMinutes} minutes</p>
-            <p><strong>Servings:</strong> ${data.servings}</p>
+            <h3 style="color:#688c96;">Ingredients</h3>
+            <ul style="color:#555;">${ingredientsHTML}</ul>
+
+            <h3 class="mt-4" style="color:#688c96;">Instructions</h3>
+            <ol style="color:#555;">${instructionsHTML}</ol>
             `;
         }
 
