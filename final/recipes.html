@@ -98,6 +98,13 @@
             }
         }
 
+        function searchRecipe(){
+            const query = document.getElementById("searchInput").value.trim();
+            if (query){
+                window.location.href = `recipes.html?query=${encodeURIComponent(query)}`;
+            }
+        }
+
         function displayRecipes(recipes) {
                         container.innerHTML = "";
                         recipes.forEach(recipe => {
