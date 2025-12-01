@@ -69,20 +69,6 @@
         //FUNCTION LOADS RECIPE BASED ON category , query , or all!!!
         async function loadRecipes(){
 
-           // const cached = localStorage.getItem("featuredRecipes")
-           // console.log("cached recipes:", cached);
-
-           // if (cached){
-           //     try{
-            //        const recipes = JSON.parse(cached);
-            //        displayRecipes(recipes);
-             //       return;
-               // } catch (error){
-              //      console.error("Error parsing cached recipes:", error);
-              //      localStorage.removeItem("featuredRecipes");
-              //  }
-           // }
-
             try{
                 const params = new URLSearchParams(window.location.search);
                 const category = params.get("category");
