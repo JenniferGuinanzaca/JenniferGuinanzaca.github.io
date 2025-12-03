@@ -42,11 +42,14 @@
                                     <a class="nav-link" href="https://jenniferguinanzaca.github.io/final/recipes.html" style="color:#688c96;" >Recipes</a>
                                 </li>
                             </ul>
-                            <form class="d-flex ms-3" role="search">
-                                <input class="form-control rounded-pill border border-secondary me-2 px-3" 
-                                type="search" placeholder="Search recipes..." aria-label="Search" style="width: 200px; transition: all 0.3s;">
-                                <button class="btn btn-outline-success rounded-pill px-4" type="submit">Search</button>
-                            </form>
+                           <form class="d-flex ms-3" role="search">
+                            <input id="searchInput" class="form-control rounded-pill border border-secondary me-2 px-3" 
+                            type="search" 
+                            placeholder="Search recipes..." 
+                            aria-label="Search" style="width: 200px; transition: all 0.3s;">
+                            <button type= "button" class="btn btn-outline-success rounded-pill px-4" 
+                            type="submit" onclick="searchRecipe()">Search</button>
+                        </form>
                     </div>
                 </div>
             </nav>
