@@ -13,7 +13,7 @@ A modern and user-friendly recipe website that allows users to discover and expl
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** HTML, CSS, JavaScript  
+- **Frontend:** HTML, CSS, JavaScript, Bootstrap
 - **API:** Spoonacular Recipe API  
 
 ## 🌐 API Usage (Important)
