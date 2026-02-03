@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title> Spoonful - Home  </title>
+
+        <!--font-->
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Cookie&family=Quicksand:wght@400;500&family=Poppins:wght@400;500&family=M+PLUS+Rounded+1c:wght@400;500&family=Roboto:wght@400;500&family=Lato:wght@400;500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    </head>
+
+    <style>
+        body{
+            background-color:#ffffff;
+        }
+    </style>
+
+    <body>
+        <!-- Slogan lol -->
+        <div class="mt-0" rounded text-center style="background-color:#dbeef4"> 
+            <h6 class="text-center" style="font-family:'Quicksand'; color:#688c96;"> 
+                a taste of love, in every recipe  
+            </h6>
+        </div>
+
+        <!-- NavBar -->
+            <nav class="navbar navbar-expand-lg bg-body-tertiary; style="background-color:#ffffff; padding: 10px 20px;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="https://jenniferguinanzaca.github.io/final/index.html" style="font-family:'Quicksand'; color:#688c96; font-size:34px;"> 
+                        Spoonful
+                    </a>
+
+            <!--Collapse 4 mobile-->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="Home" style="color:#688c96;">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" style="color:#688c96;" onclick="scrollToAbout()">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://jenniferguinanzaca.github.io/final/recipes.html" style="color:#688c96;">Recipes</a>
+                            </li>
+                        </ul>
+
+                        <form class="d-flex ms-3" role="search">
+                            <input id="searchInput" class="form-control rounded-pill border border-secondary me-2 px-3" 
+                            type="search" 
+                            placeholder="Search recipes..." 
+                            aria-label="Search" style="width: 200px; transition: all 0.3s;">
+                            <button type= "button" class="btn btn-outline-success rounded-pill px-4" 
+                            type="submit" onclick="searchRecipe()">Search</button>
+                        </form>
+                </div>
+            </div>
+        </nav>
+
+        <hr style="border: none; height: 1px; background-color: #d5d2d1; margin: 0 0 20px 0;"> 
+
+        <!-- Category Cards Section -->
+        <section class="container py-5">
+            <h2 class="text-center mb-4" style="font-family:'Quicksand'; color:#688c96;">
+                Explore by Category
+            </h2>
+
+            <div class="row justify-content-center g-4">
+
+                <!-- Latin -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="recipes.html?category=Latin American" class="text-decoration-none">
+                        <div class="card shadow-sm border-0 h-100">
+                            <img src="https://www.foodandwine.com/thmb/SPdstaqV80YcCbzzqtHXjxx4Isg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/birria-tacos-FT-RECIPE0420-1-b209e88cc1c04b72849634ff15214290.jpg" 
+                            class="card-img-top" alt="Latin Food">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" style="color:#688c96;">Latin</h5>
+                                <p class="card-text text-muted" style="font-size:14px;">
+                                    Spicy, savory, and vibrant dishes from Latin America.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Asian -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="recipes.html?category=Asian" class="text-decoration-none">
+                        <div class="card shadow-sm border-0 h-100">
+                            <img src="https://delivisor.com/wp-content/uploads/2024/12/asian-food-served-plates-pans-and-bowls-full-of-2023-11-27-04-50-29-utc-scaled.jpg" 
+                            class="card-img-top" alt="Asian Food">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" style="color:#688c96;">Asian</h5>
+                                <p class="card-text text-muted" style="font-size:14px;">
+                                    Fresh and flavorful recipes from Asia.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Middle Eastern -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="recipes.html?category=Middle Eastern" class="text-decoration-none">
+                        <div class="card shadow-sm border-0 h-100">
+                            <img src="https://www.saveur.com/uploads/2019/02/08/OM2HKONR4Z6SFP3L6K6N3AQNA4.jpg?format=auto&optimize=high&width=1440"
+                            class="card-img-top" alt="Desserts">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" style="color:#688c96;">Middle Eastern</h5>
+                                <p class="card-text text-muted" style="font-size:14px;">
+                                   Vibrant and Delicious Recipes from the Middle East.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- All Recipes -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="recipes.html?all=true" class="text-decoration-none">
+                        <div class="card shadow-sm border-0 h-100">
+                            <img src="https://www.simplyrecipes.com/thmb/J2sGAbTViSZc5ub9AkdRbh3K4yk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Skillet-Cacio-e-Pepe-Tortellini-LEAD-4-486768b5cbd645829e72ce7f65f56a95.jpg" 
+                            class="card-img-top" alt="All Recipes">
+
+                            <div class="card-body text-center">
+                                <h5 class="card-title" style="color:#688c96;">All Recipes</h5>
+                                <p class="card-text text-muted" style="font-size:14px;">
+                                   A full collection of dishes to explore and enjoy.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--Featured-->
+        <section class="container py-5">
+            <h2 class="text-center mb-4" style="font-family:'Quicksand'; color:#688c96;"> Featured Recipes </h2>
+            <div id="recipesContainer" class="row justify-content-center g-4">
+                <!--cards will go here-->
+            </div>
+        </section>
+
+        <!--About Us-->
+        <div class="mt-0 p-4 rounded text-center" style="background-color: #eff4f6; color:#dbeef4;">
+            <section id="About" class="container py-5 text-center">
+                <h2 class="mb-4" style="font-family:'Quicksand'; color:#688c96;">About Us</h2>
+                <p style="font-family:'Lato'; color:#555;">
+                    Spoonful is a cozy place where recipes meet creativity. Whether you're a beginner or a master chef, we have something for everyone!
+                </p>
+                
+            </section>      
+        </div>
+    </body>
+
+    <script>
+        const apiKey = "fa5eca3f2d24416287a3dc418835e215";
+        const container = document.getElementById("recipesContainer");
+
+        async function loadFeatured() {
+
+            try {
+            const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=4&addRecipeInformation=true`;
+            const response = await fetch(url);
+            const data = await response.json();
+            console.log("API response:", data);
+
+            if (!data.results || data.results.length === 0) {
+                container.innerHTML = "<p>No recipes found. Please try again later.</p>";
+                return;
+            }
+
+            displayRecipes(data.results);
+            
+        }
+
+        catch (error) {
+                container.innerHTML = "<p>Could not load recipes. Try again later.</p>";
+                console.error("Error fetching recipes:", error);
+            }
+        }
+
+        function scrollToAbout() {
+        document.getElementById("About").scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function searchRecipe(){
+            const query = document.getElementById("searchInput").value.trim();
+            if (query){
+                window.location.href = `recipes.html?query=${encodeURIComponent(query)}`;
+            }
+        }
+
+       function displayRecipes(recipes) {
+                        container.innerHTML = "";
+                        recipes.forEach(recipe => {
+                        container.innerHTML += `
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <a href="recipe.html?id=${recipe.id}" class="text-decoration-none">
+                            <div class="card shadow-sm border-0 h-100">
+                                <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
+                                <div class="card-body text-center">
+                                        <h5 style="color:#688c96;">${recipe.title}</h5>
+                                        <p style="font-size:14px; color:#555;">Total time: ${recipe.readyInMinutes} mins</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>`;
+                });
+            }
+        scrollToAbout();
+        loadFeatured();
+    </script>
+</html>
