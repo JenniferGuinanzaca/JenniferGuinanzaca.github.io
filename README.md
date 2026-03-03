@@ -2,6 +2,8 @@
 
 A modern and user-friendly recipe website that allows users to discover and explore recipes using the **Spoonacular API**. The project focuses on clean UI, usability, and efficient API usage by limiting the number of recipes displayed per request.
 
+https://jenniferguinanzaca.github.io/RecipeProject/index.html
+
 ## ✨ Features
 
 - 🥗 Browse recipes fetched from the Spoonacular API
